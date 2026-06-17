@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Ícones do menu mobile -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <link rel="stylesheet" href="../css/eventos.css" />
+
+    <title>HIFEM | Eventos</title>
+</head>
+
+<body>
+
+    <!-- MENU SUPERIOR -->
+    <nav class="navbar">
+        <div class="title">
+            <img class="nav-logo" src="../assets/img/logo-hifem.png" alt="Logo HIFEM" />
+
+            <div>
+                <h2>
+                    <a href="../index.html">HIFEM</a>
+                </h2>
+                <p>História, Filosofia e Educação Matemática</p>
+            </div>
+        </div>
+
+        <input type="checkbox" id="nav-check" />
+
+        <label for="nav-check" class="nav-checkbtn" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <div class="navbar-btn-list inactive">
+            <a href="../index.html">Início</a>
+            <a href="./sobre.html">Sobre</a>
+            <a href="./docentes.html">Integrantes</a>
+            <a href="./publicacoes.html">Publicações</a>
+            <a href="./materiais.html">Materiais de Ensino</a>
+            <a class="active" href="./eventos.html">Eventos</a>
+            <a href="./links.html">Links</a>
+            <a href="./contato.html">Contato</a>
+        </div>
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <header class="page-heading">
+            <span class="page-kicker">Eventos</span>
+
+            <h1>
+                Encontros, seminários e atividades
+            </h1>
+
+            <p class="page-lead">
+                Espaço dedicado à divulgação de encontros, palestras, seminários,
+                minicursos, mesas-redondas e demais atividades promovidas ou relacionadas
+                ao HIFEM.
+            </p>
+        </header>
+
+
+        <div class="sep"></div>
+
+
+        <section class="eventos-secao">
+
+            <!-- EVENTO EM DESTAQUE -->
+            <article class="evento evento-destaque">
+                <div>
+                    <div class="evento-meta">
+                        <span>Evento em destaque</span>
+                        <span>25 a 28 de novembro de 2025</span>
+                        <span>Modalidade online</span>
+                    </div>
+
+                    <h2 class="evento-titulo">
+                        X Encontro Nacional do HIFEM
+                    </h2>
+
+                    <p class="evento-desc">
+                        É com satisfação que convidamos você para o X Encontro Nacional
+                        do HIFEM, promovido pelo Grupo de Pesquisa História, Filosofia
+                        e Educação Matemática.
+                    </p>
+                </div>
+
+                <img
+                    src="../assets/eventos/x-encontro-hifem.jpg"
+                    alt="Banner do X Encontro Nacional do HIFEM"
+                    class="evento-img"
+                />
+
+                <a
+                    href="https://www.even3.com.br/encontro-do-hifem-2025-616116/"
+                    class="evento-btn"
+                    target="_blank"
+                >
+                    Inscreva-se
+                </a>
+            </article>
+
+
+            <!-- EVENTO 01 -->
+            <article class="evento">
+                <div>
+                    <div class="evento-meta">
+                        <span>Encontros anuais</span>
+                        <span>Memória do grupo</span>
+                    </div>
+
+                    <h2 class="evento-titulo">
+                        Encontros Anuais do HIFEM
+                    </h2>
+
+                    <p class="evento-desc">
+                        Há alguns anos, por ocasião dos 20 anos do HIFEM, o grupo iniciou
+                        a prática anual de realizar encontros para pensar, aprender e
+                        promover diálogos com um público mais amplo, abrindo espaço para
+                        divulgação e discussão dos trabalhos produzidos pelo grupo.
+                    </p>
+                </div>
+
+                <div class="evento-imgs">
+                    <img
+                        src="../assets/eventos/encontro-hifem1.jpg"
+                        alt="Registro de encontro do HIFEM"
+                    />
+
+                    <iframe
+                        src="https://lume.ufrgs.br/bitstream/handle/10183/254844/001162423.pdf?sequence=1&isAllowed=y"
+                        title="Documento sobre encontros do HIFEM"
+                    ></iframe>
+                </div>
+            </article>
+
+
+            <!-- EVENTO MODELO -->
+            <article class="evento">
+                <div>
+                    <div class="evento-meta">
+                        <span>Ano a inserir</span>
+                        <span>Tipo de evento</span>
+                        <span>Local ou modalidade</span>
+                    </div>
+
+                    <h2 class="evento-titulo">
+                        Título do evento
+                    </h2>
+
+                    <p class="evento-desc">
+                        Descrição breve do evento. Você pode inserir aqui informações sobre
+                        a temática, os participantes, a instituição organizadora, o período
+                        de realização e sua relação com as linhas de pesquisa do HIFEM.
+                    </p>
+                </div>
+
+                <div class="evento-imgs">
+                    <img
+                        src="../assets/eventos/evento-modelo.jpg"
+                        alt="Imagem do evento"
+                    />
+                </div>
+
+                <a href="#" class="evento-btn">
+                    Saiba mais
+                </a>
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-inner">
+
+            <div>
+                <div class="footer-brand">HIFEM</div>
+                <p>
+                    Grupo de Pesquisa em História, Filosofia e Educação Matemática.
+                </p>
+                <p>
+                    © 2026 HIFEM.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">Navegação</div>
+
+                <div class="footer-links">
+                    <a href="./sobre.html">Sobre</a>
+                    <a href="./docentes.html">Integrantes</a>
+                    <a href="./publicacoes.html">Publicações</a>
+                    <a href="./eventos.html">Eventos</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-title">Contato</div>
+
+                <p>
+                    E-mail:<br />
+                    contato@hifem.org
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <script src="../js/nav.js" defer></script>
+
+</body>
+</html>

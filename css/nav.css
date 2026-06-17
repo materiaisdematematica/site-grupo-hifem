@@ -1,0 +1,229 @@
+/* =========================================================
+   HIFEM — NAV
+   Menu superior comum a todas as páginas
+   ========================================================= */
+
+@import "./global.css";
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 auto 0;
+
+    min-height: var(--nav-height);
+    padding: 18px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+
+    background: rgba(244, 240, 232, 0.88);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(184, 155, 96, 0.22);
+}
+
+/* Marca */
+.title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: max-content;
+}
+
+.title img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.title div {
+    display: flex;
+    flex-direction: column;
+}
+
+.title h2 {
+    margin: 0;
+    line-height: 0.95;
+}
+
+.title h2 a {
+    color: var(--blue-dark);
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 38px;
+    font-weight: 500;
+    letter-spacing: 8px;
+}
+
+.title p {
+    margin-top: 8px;
+
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    white-space: nowrap;
+}
+
+/* Links do menu */
+.navbar-btn-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    flex: 1;
+}
+
+.navbar-btn-list a {
+    position: relative;
+
+    color: var(--blue-dark);
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    padding: 8px 0;
+    opacity: 0.88;
+
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-btn-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+    transition: width 0.2s ease;
+}
+
+.navbar-btn-list a:hover,
+.navbar-btn-list a:focus {
+    color: var(--gold);
+    opacity: 1;
+    outline: none;
+}
+
+.navbar-btn-list a:hover::after,
+.navbar-btn-list a:focus::after,
+.navbar-btn-list a.active::after {
+    width: 100%;
+}
+
+.navbar-btn-list a.active {
+    color: var(--gold);
+}
+
+/* Botão menu mobile */
+.nav-checkbtn,
+#nav-check {
+    display: none;
+}
+
+.nav-checkbtn {
+    color: var(--blue-dark);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsivo intermediário */
+@media (max-width: 1180px) {
+    .navbar {
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 auto 0;
+
+    min-height: 112px;
+    padding: 14px 6%;
+    }
+
+    .navbar-btn-list {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 22px;
+    }
+
+    body {
+        padding-top: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 820px) {
+    .navbar {
+        padding: 14px 22px;
+        min-height: 82px;
+    }
+
+    .title img {
+    width: 60px;
+    height: 60px;
+}
+
+    .title h2 a {
+        font-size: 30px;
+        letter-spacing: 6px;
+    }
+
+    .title p {
+        font-size: 10px;
+        letter-spacing: 1.6px;
+        max-width: 220px;
+        white-space: normal;
+    }
+
+    .nav-checkbtn {
+        display: block;
+        position: absolute;
+        right: 24px;
+        top: 24px;
+    }
+
+    .navbar-btn-list {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding-top: 18px;
+        border-top: 1px solid rgba(184, 155, 96, 0.22);
+    }
+
+    .navbar-btn-list.inactive {
+        display: none;
+    }
+
+    #nav-check:checked ~ .navbar-btn-list,
+    .navbar-btn-list:not(.inactive) {
+        display: flex;
+    }
+
+    .navbar-btn-list a {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title p {
+        display: none;
+    }
+
+    .title h2 a {
+        font-size: 28px;
+    }
+}

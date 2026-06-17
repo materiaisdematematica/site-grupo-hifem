@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Ícones do menu mobile -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <link rel="stylesheet" href="../css/pub.css" />
+
+    <title>HIFEM | Materiais de Ensino</title>
+</head>
+
+<body>
+
+    <!-- MENU SUPERIOR -->
+    <nav class="navbar">
+        <div class="title">
+            <img class="nav-logo" src="../assets/img/logo-hifem.png" alt="Logo HIFEM" />
+
+            <div>
+                <h2>
+                    <a href="../index.html">HIFEM</a>
+                </h2>
+                <p>História, Filosofia e Educação Matemática</p>
+            </div>
+        </div>
+
+        <input type="checkbox" id="nav-check" />
+
+        <label for="nav-check" class="nav-checkbtn" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <div class="navbar-btn-list inactive">
+            <a href="../index.html">Início</a>
+            <a href="./sobre.html">Sobre</a>
+            <a href="./docentes.html">Integrantes</a>
+            <a href="./publicacoes.html">Publicações</a>
+            <a class="active" href="./materiais.html">Materiais de Ensino</a>
+            <a href="./eventos.html">Eventos</a>
+            <a href="./links.html">Links</a>
+            <a href="./contato.html">Contato</a>
+        </div>
+    </nav>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <header class="page-heading">
+            <span class="page-kicker">Materiais de Ensino</span>
+
+            <h1>
+                Recursos, propostas e materiais didáticos
+            </h1>
+
+            <p class="page-lead">
+                Espaço destinado à organização de materiais voltados ao ensino de Matemática,
+                à formação docente e às relações entre História, Filosofia e Educação Matemática.
+            </p>
+        </header>
+
+
+        <div class="sep"></div>
+
+
+        <section class="content-card">
+            <p class="section-introduction">
+                Esta página pode reunir sequências didáticas, cadernos de atividades,
+                propostas de aula, materiais de formação, documentos de apoio, vídeos,
+                links e outros recursos produzidos ou recomendados pelo HIFEM.
+            </p>
+        </section>
+
+
+        <div class="sep"></div>
+
+
+        <section class="artigos-list">
+            <ul>
+
+                <li>
+                    <div class="pub-meta">Material de ensino · Ano a inserir</div>
+
+                    <h2 class="pub-title">
+                        Título do material didático
+                    </h2>
+
+                    <p class="pub-description">
+                        Breve descrição do material. Você pode indicar aqui o público-alvo,
+                        o conteúdo matemático abordado, a relação com História da Matemática,
+                        Filosofia ou formação docente, além de orientações de uso.
+                    </p>
+
+                    <div class="pub-actions">
+                        <button
+                            type="button"
+                            class="js-open-pdf"
+                            data-pdf="../assets/pdfs/material01.pdf"
+                            data-title="Título do material didático"
+                        >
+                            Abrir PDF
+                        </button>
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="pub-meta">Sequência didática · Ano a inserir</div>
+
+                    <h2 class="pub-title">
+                        Título da sequência didática
+                    </h2>
+
+                    <p class="pub-description">
+                        Descrição breve da proposta. Este espaço pode receber materiais
+                        para professores da Educação Básica, cursos de formação inicial
+                        ou continuada, oficinas, minicursos e atividades investigativas.
+                    </p>
+
+                    <div class="pub-actions">
+                        <a href="#" target="_blank">
+                            Acessar
+                        </a>
+                    </div>
+                </li>
+
+
+                <li>
+                    <div class="pub-meta">Recurso recomendado</div>
+
+                    <h2 class="pub-title">
+                        Título do recurso ou repositório
+                    </h2>
+
+                    <p class="pub-description">
+                        Insira aqui links para materiais externos, repositórios, coleções,
+                        vídeos, livros digitais, objetos de aprendizagem ou páginas úteis
+                        para pesquisa e ensino.
+                    </p>
+
+                    <div class="pub-actions">
+                        <a href="#" target="_blank">
+                            Acessar
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+
+        <!-- VISUALIZADOR DE PDF -->
+        <div class="pdf-modal" id="pdfModal" aria-hidden="true">
+            <div class="pdf-box">
+
+                <div class="pdf-header">
+                    <strong id="pdfTitle">Visualizador de PDF</strong>
+
+                    <button class="pdf-close" type="button" aria-label="Fechar PDF">
+                        ×
+                    </button>
+                </div>
+
+                <iframe
+                    class="pdf-viewer"
+                    id="pdfViewer"
+                    src=""
+                    title="Visualizador de PDF"
+                ></iframe>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-inner">
+
+            <div>
+                <div class="footer-brand">HIFEM</div>
+                <p>
+                    Grupo de Pesquisa em História, Filosofia e Educação Matemática.
+                </p>
+                <p>
+                    © 2026 HIFEM.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">Navegação</div>
+
+                <div class="footer-links">
+                    <a href="./sobre.html">Sobre</a>
+                    <a href="./docentes.html">Integrantes</a>
+                    <a href="./publicacoes.html">Publicações</a>
+                    <a href="./eventos.html">Eventos</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="footer-title">Contato</div>
+
+                <p>
+                    E-mail:<br />
+                    contato@hifem.org
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- JS -->
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/pdf.js" defer></script>
+
+</body>
+</html>

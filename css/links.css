@@ -1,0 +1,109 @@
+/* =========================================================
+   HIFEM — LINKS
+   Lista de links recomendados, instituições e repositórios
+   ========================================================= */
+
+@import "./global.css";
+
+.links-section {
+    list-style: none;
+    padding: 0;
+    margin: 34px 0 0;
+
+    display: grid;
+    gap: 18px;
+}
+
+.links-section li {
+    position: relative;
+
+    padding: 28px 30px;
+
+    background: rgba(250, 248, 242, 0.76);
+    border: 1px solid rgba(184, 155, 96, 0.24);
+    border-left: 4px solid var(--gold);
+
+    box-shadow: 0 12px 28px rgba(16, 47, 54, 0.04);
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
+}
+
+.links-section li:hover {
+    transform: translateX(4px);
+    background: rgba(250, 248, 242, 0.96);
+    border-color: rgba(184, 155, 96, 0.48);
+}
+
+.links-section span {
+    display: block;
+
+    color: var(--blue-dark);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 28px;
+    line-height: 1.12;
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+.links-section a {
+    display: inline-block;
+
+    color: var(--blue);
+    text-decoration: none;
+
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: break-word;
+
+    border-bottom: 1px solid rgba(184, 155, 96, 0.55);
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.links-section a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.links-description {
+    max-width: 820px;
+
+    color: var(--text);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.65;
+}
+
+/* Pequena etiqueta opcional para categorizar links */
+.link-tag {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--gold);
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    .links-section li {
+        padding: 24px;
+    }
+
+    .links-section span {
+        font-size: 24px;
+    }
+
+    .links-section a {
+        font-size: 14px;
+    }
+}

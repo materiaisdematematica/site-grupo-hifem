@@ -1,0 +1,364 @@
+/* =========================================================
+   HIFEM — PUBLICAÇÕES
+   Página principal de publicações, categorias, listas e PDFs
+   ========================================================= */
+
+@import "./global.css";
+
+/* =========================================================
+   CATEGORIAS DE PUBLICAÇÕES
+   ========================================================= */
+
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.link-div {
+    min-height: 150px;
+}
+
+.link-div a {
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 28px;
+
+    background: rgba(250, 248, 242, 0.76);
+    border: 1px solid rgba(184, 155, 96, 0.26);
+
+    color: var(--blue-dark);
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.05;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        color 0.22s ease;
+}
+
+.link-div a::after {
+    content: "→";
+
+    color: var(--gold);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.link-div a:hover {
+    transform: translateY(-5px);
+    background: rgba(250, 248, 242, 0.98);
+    border-color: rgba(184, 155, 96, 0.58);
+    color: var(--gold);
+}
+
+/* =========================================================
+   LISTAS DE PUBLICAÇÕES
+   ========================================================= */
+
+.artigos-list {
+    margin-top: 34px;
+}
+
+.artigos-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    gap: 18px;
+}
+
+.artigos-list li {
+    position: relative;
+
+    padding: 28px 30px 28px 34px;
+
+    background: rgba(250, 248, 242, 0.76);
+    border: 1px solid rgba(184, 155, 96, 0.22);
+    border-left: 4px solid var(--gold);
+
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.65;
+
+    box-shadow: 0 12px 28px rgba(16, 47, 54, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.artigos-list li:hover {
+    transform: translateX(4px);
+    background: rgba(250, 248, 242, 0.96);
+    border-color: rgba(184, 155, 96, 0.45);
+}
+
+.artigos-list span,
+.pub-author {
+    color: var(--blue-dark);
+    font-weight: 800;
+}
+
+.pub-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--blue-dark);
+    font-size: 25px;
+    line-height: 1.18;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.pub-meta {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 14px;
+}
+
+.pub-description {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.pub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.artigos-list a,
+.pub-actions a,
+.pub-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 0 14px;
+
+    color: var(--blue-dark);
+    background: transparent;
+    border: 1px solid rgba(184, 155, 96, 0.55);
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.artigos-list a:hover,
+.pub-actions a:hover,
+.pub-actions button:hover {
+    background: var(--gold);
+    color: var(--paper);
+    border-color: var(--gold);
+}
+
+/* =========================================================
+   LIVROS
+   ========================================================= */
+
+.livros-list {
+    list-style: none;
+    padding: 0;
+    margin: 34px 0 0;
+
+    display: grid;
+    gap: 26px;
+}
+
+.livro-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    align-items: start;
+
+    padding: 28px;
+
+    background: rgba(250, 248, 242, 0.76);
+    border: 1px solid rgba(184, 155, 96, 0.22);
+    box-shadow: var(--shadow);
+}
+
+.livro-capa {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+
+    object-fit: cover;
+    border: 1px solid rgba(184, 155, 96, 0.28);
+    filter: saturate(0.86) contrast(0.96);
+}
+
+.livro-info {
+    min-width: 0;
+}
+
+.livro-titulo {
+    color: var(--blue-dark);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.livro-autor {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.livro-descricao {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+/* =========================================================
+   VISUALIZADOR DE PDF
+   ========================================================= */
+
+.pdf-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(16, 47, 54, 0.82);
+    padding: 30px;
+}
+
+.pdf-modal.active {
+    display: flex;
+}
+
+.pdf-box {
+    width: min(1100px, 100%);
+    height: min(82vh, 850px);
+
+    background: var(--paper);
+    border: 1px solid rgba(184, 155, 96, 0.4);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-header {
+    min-height: 58px;
+    padding: 0 18px 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 1px solid rgba(184, 155, 96, 0.28);
+}
+
+.pdf-header strong {
+    color: var(--blue-dark);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.pdf-close {
+    border: 0;
+    background: transparent;
+    color: var(--blue-dark);
+
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.pdf-close:hover {
+    color: var(--gold);
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 920px) {
+    .atalhos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .livro-item {
+        grid-template-columns: 130px 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .atalhos {
+        grid-template-columns: 1fr;
+    }
+
+    .link-div a {
+        font-size: 27px;
+    }
+
+    .artigos-list li {
+        padding: 24px;
+    }
+
+    .livro-item {
+        grid-template-columns: 1fr;
+    }
+
+    .livro-capa {
+        max-width: 220px;
+    }
+
+    .pdf-modal {
+        padding: 12px;
+    }
+
+    .pdf-box {
+        height: 88vh;
+    }
+}

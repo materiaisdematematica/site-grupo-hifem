@@ -1,0 +1,223 @@
+/* =========================================================
+   HIFEM — EVENTOS
+   Página de eventos, encontros, imagens e PDFs incorporados
+   ========================================================= */
+
+@import "./global.css";
+
+/* Seção geral */
+.eventos-secao {
+    display: grid;
+    gap: 34px;
+    margin-top: 34px;
+}
+
+/* Card de evento */
+.evento {
+    background: rgba(250, 248, 242, 0.76);
+    border: 1px solid rgba(184, 155, 96, 0.24);
+    box-shadow: var(--shadow);
+
+    padding: 34px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
+}
+
+.evento:hover {
+    transform: translateY(-4px);
+    border-color: rgba(184, 155, 96, 0.54);
+    background: rgba(250, 248, 242, 0.96);
+}
+
+/* Título */
+.evento-titulo {
+    color: var(--blue-dark);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.05;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Metadados */
+.evento-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+
+    margin-bottom: 22px;
+
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+}
+
+.evento-data,
+.evento-local {
+    color: var(--gold);
+}
+
+/* Descrição */
+.evento-desc,
+.evento p {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 900px;
+}
+
+/* Galeria / imagens / embeds */
+.evento-imgs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.evento-imgs img {
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(184, 155, 96, 0.24);
+    filter: saturate(0.84) contrast(0.96);
+    background: var(--paper-2);
+}
+
+.evento-imgs embed,
+.evento-imgs iframe {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-height: 560px;
+
+    border: 1px solid rgba(184, 155, 96, 0.32);
+    background: var(--paper);
+}
+
+/* Imagem de destaque única */
+.evento-img {
+    width: 100%;
+    max-height: 480px;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(184, 155, 96, 0.24);
+    filter: saturate(0.84) contrast(0.96);
+    background: var(--paper-2);
+}
+
+/* Botões */
+.evento-btn,
+.evento a.evento-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-height: 42px;
+    padding: 0 18px;
+
+    background: transparent;
+    border: 1px solid rgba(184, 155, 96, 0.62);
+
+    color: var(--blue-dark);
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.evento-btn:hover {
+    background: var(--gold);
+    color: var(--paper);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Bloco de evento em destaque */
+.evento-destaque {
+    background: var(--blue-dark);
+    color: var(--paper);
+
+    border: 1px solid rgba(184, 155, 96, 0.34);
+    box-shadow: var(--shadow);
+
+    padding: 38px;
+    margin-bottom: 34px;
+}
+
+.evento-destaque h2,
+.evento-destaque h3,
+.evento-destaque .evento-titulo {
+    color: var(--paper);
+}
+
+.evento-destaque p {
+    color: rgba(250, 248, 242, 0.76);
+}
+
+.evento-destaque .evento-meta,
+.evento-destaque .evento-data,
+.evento-destaque .evento-local {
+    color: var(--gold);
+}
+
+.evento-destaque .evento-btn {
+    color: var(--paper);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .evento {
+        padding: 28px;
+    }
+
+    .evento-imgs {
+        grid-template-columns: 1fr;
+    }
+
+    .evento-imgs img {
+        height: auto;
+        max-height: 360px;
+    }
+
+    .evento-imgs embed,
+    .evento-imgs iframe {
+        min-height: 460px;
+    }
+}
+
+@media (max-width: 560px) {
+    .evento {
+        padding: 24px;
+    }
+
+    .evento-imgs embed,
+    .evento-imgs iframe {
+        min-height: 360px;
+    }
+
+    .evento-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
