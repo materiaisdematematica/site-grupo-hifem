@@ -1,6 +1,7 @@
 /* =========================================================
    HIFEM — PROFESSORES
    Carrega orientandos a partir de db/professores.json
+   Usado apenas em professor.html
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtitulo = document.querySelector(".page-lead");
     const info = document.querySelector(".info");
     const lista = document.getElementById("lista-alunos");
+
+    if (!lista) {
+        return;
+    }
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -25,33 +30,31 @@ document.addEventListener("DOMContentLoaded", () => {
             info.textContent = "Orientandos";
         }
 
-        if (lista) {
-            lista.innerHTML = `
-                <li>
-                    Não foi possível carregar a lista de orientandos.
-                </li>
-            `;
-        }
+        lista.innerHTML = `
+            <li>
+                Não foi possível carregar a lista de orientandos.
+            </li>
+        `;
     }
 
     function renderizarProfessor(professor) {
+        const nome = professor.name || professor.nome || "Professor";
+
         if (titulo) {
-            titulo.textContent = professor.name;
+            titulo.textContent = nome;
         }
 
         if (subtitulo) {
-            subtitulo.textContent = `Lista de orientandos vinculados a ${professor.name}.`;
+            subtitulo.textContent = `Lista de orientandos vinculados a ${nome}.`;
         }
 
         if (info) {
             info.textContent = "Orientandos";
         }
 
-        if (!lista) {
-            return;
-        }
+        const alunos = professor.alunos || professor.orientandos || [];
 
-        if (!professor.alunos || professor.alunos.length === 0) {
+        if (!alunos.length) {
             lista.innerHTML = `
                 <li>
                     Nenhum orientando cadastrado no momento.
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lista.innerHTML = "";
 
-        professor.alunos.forEach((aluno) => {
+        alunos.forEach((aluno) => {
             const item = document.createElement("li");
             item.textContent = aluno;
             lista.appendChild(item);

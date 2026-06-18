@@ -1,11 +1,14 @@
 /* =========================================================
    HIFEM — DOCENTES / INTEGRANTES
-   Cards de pesquisadores e página de orientandos
+   Cards de pesquisadores com fotos e página de orientandos
    ========================================================= */
 
 @import "./global.css";
 
-/* Subtítulos internos */
+/* =========================================================
+   TÍTULOS INTERNOS
+   ========================================================= */
+
 .subt {
     color: var(--gold);
     font-size: 13px;
@@ -29,15 +32,23 @@
     font-weight: 600;
 }
 
-/* Grid de integrantes */
+/* =========================================================
+   GRID DE INTEGRANTES
+   ========================================================= */
+
 .lista-integrantes {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px;
+
     padding: 0;
+    margin: 0;
 }
 
-/* Card */
+/* =========================================================
+   CARD DO INTEGRANTE
+   ========================================================= */
+
 .lista-card {
     position: relative;
 
@@ -50,6 +61,7 @@
 
     background: rgba(250, 248, 242, 0.76);
     border: 1px solid rgba(184, 155, 96, 0.24);
+    border-left: 4px solid var(--gold);
     box-shadow: var(--shadow);
 
     transition:
@@ -71,7 +83,15 @@
     min-width: 0;
 }
 
-/* Foto */
+/* Quando o card tem link de orientandos */
+.lista-card:has(.alunos) {
+    padding-bottom: 58px;
+}
+
+/* =========================================================
+   FOTO DO INTEGRANTE
+   ========================================================= */
+
 .prof-img {
     flex: 0 0 auto;
 
@@ -82,30 +102,39 @@
     object-fit: cover;
 
     border: 2px solid rgba(184, 155, 96, 0.42);
-    filter: saturate(0.78) contrast(0.96);
     background: var(--paper-2);
+
+    filter: saturate(0.82) contrast(0.96);
 }
 
-/* Nome */
+/* =========================================================
+   TEXTOS DO CARD
+   ========================================================= */
+
 .lista-integrantes h4 {
     color: var(--blue-dark);
+
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 28px;
     line-height: 1.05;
     font-weight: 600;
+
     margin: 0;
 }
 
-/* Instituição / e-mail */
 .lista-card p {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.45;
     margin: 0;
+
     word-break: break-word;
 }
 
-/* Links */
+/* =========================================================
+   LINKS LATTES / ORCID
+   ========================================================= */
+
 .link-lattes,
 .link-orcid {
     display: inline-block;
@@ -121,16 +150,24 @@
 
     border-bottom: 1px solid rgba(184, 155, 96, 0.55);
 
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .link-lattes:hover,
-.link-orcid:hover {
+.link-lattes:focus-visible,
+.link-orcid:hover,
+.link-orcid:focus-visible {
     color: var(--gold);
     border-color: var(--gold);
+    outline: none;
 }
 
-/* Link para orientandos */
+/* =========================================================
+   LINK PARA ORIENTANDOS
+   ========================================================= */
+
 .alunos {
     position: absolute;
     right: 24px;
@@ -143,20 +180,37 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.4px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.alunos:hover {
+.alunos:hover,
+.alunos:focus-visible {
     color: var(--blue-dark);
+    transform: translateX(3px);
+    outline: none;
 }
 
-/* Lista de orientandos na página professor.html */
-ul {
+/* =========================================================
+   PÁGINA INDIVIDUAL — ORIENTANDOS
+   IMPORTANTE:
+   Não estilizar ul/li globalmente.
+   Apenas #lista-alunos.
+   ========================================================= */
+
+#lista-alunos,
+.orientandos-list,
+.professor-list {
     list-style: none;
     padding: 0;
     margin: 34px 0 0;
 }
 
-li {
+#lista-alunos li,
+.orientandos-list li,
+.professor-list li {
     position: relative;
 
     padding: 16px 18px 16px 34px;
@@ -170,8 +224,11 @@ li {
     line-height: 1.5;
 }
 
-li::before {
+#lista-alunos li::before,
+.orientandos-list li::before,
+.professor-list li::before {
     content: "";
+
     position: absolute;
     left: 16px;
     top: 26px;
@@ -183,7 +240,10 @@ li::before {
     background: var(--gold);
 }
 
-/* Responsivo */
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
 @media (max-width: 980px) {
     .lista-integrantes {
         grid-template-columns: 1fr;
@@ -197,6 +257,10 @@ li::before {
         padding: 22px;
     }
 
+    .lista-card:has(.alunos) {
+        padding-bottom: 22px;
+    }
+
     .prof-img {
         width: 86px;
         height: 86px;
@@ -208,6 +272,8 @@ li::before {
 
     .alunos {
         position: static;
+        display: inline-block;
+        width: fit-content;
         margin-top: 8px;
     }
 }

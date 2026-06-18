@@ -24,9 +24,15 @@
 
     --max-width: 1180px;
     --nav-height: 92px;
+
+    /* Acessibilidade / foco */
+    --focus-ring: 0 0 0 3px rgba(184, 155, 96, 0.34);
 }
 
-/* Reset */
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -40,15 +46,25 @@ html {
 
 body {
     min-height: 100vh;
+
     background-color: var(--bg);
     color: var(--text);
+
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.5;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
+
+/* =========================================================
+   ELEMENTOS BASE
+   ========================================================= */
 
 /* Imagens */
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -61,6 +77,12 @@ a {
 ::selection {
     background: var(--gold);
     color: var(--paper);
+}
+
+/* Foco acessível genérico */
+:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
 }
 
 /* Tipografia */
@@ -87,11 +109,15 @@ h4,
     margin: 30px 0;
 }
 
-/* Botão padrão */
+/* =========================================================
+   BOTÃO PADRÃO
+   ========================================================= */
+
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-height: 42px;
     padding: 0 18px;
 
@@ -106,16 +132,29 @@ h4,
     letter-spacing: 1.6px;
 
     cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
     background: var(--gold);
     color: var(--paper);
+    border-color: var(--gold);
     transform: translateY(-2px);
+    box-shadow: var(--focus-ring);
+    outline: none;
 }
 
-/* Rodapé padrão */
+/* =========================================================
+   RODAPÉ PADRÃO
+   ========================================================= */
+
 footer {
     background: var(--blue-dark);
     color: var(--paper);
@@ -141,21 +180,29 @@ footer {
 
 footer p,
 footer a {
-    color: rgba(250, 248, 242, 0.72);
+    color: rgba(250, 248, 242, 0.74);
     text-decoration: none;
     line-height: 1.8;
 }
 
-footer a:hover {
+footer a {
+    transition: color 0.2s ease;
+}
+
+footer a:hover,
+footer a:focus-visible {
     color: var(--gold);
 }
 
 .footer-title {
     color: var(--gold);
+
     text-transform: uppercase;
     letter-spacing: 2px;
+
     font-size: 12px;
     font-weight: 800;
+
     margin-bottom: 14px;
 }
 
@@ -164,7 +211,10 @@ footer a:hover {
     gap: 8px;
 }
 
-/* Animação simples */
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -177,7 +227,39 @@ footer a:hover {
     }
 }
 
-/* Responsivo */
+/* Reduz movimento para usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+/* Tablet / telas médias */
+@media (max-width: 1040px) {
+    .footer-inner {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 42px 56px;
+    }
+
+    .footer-inner > div:first-child {
+        grid-column: 1 / -1;
+        max-width: 720px;
+    }
+}
+
+/* Mobile */
 @media (max-width: 900px) {
     :root {
         --nav-height: 82px;
@@ -187,9 +269,28 @@ footer a:hover {
     .footer-inner {
         width: calc(100% - 42px);
     }
+}
+
+/* Mobile estreito */
+@media (max-width: 640px) {
+    .container,
+    .footer-inner {
+        width: calc(100% - 34px);
+    }
 
     .footer-inner {
         grid-template-columns: 1fr;
         gap: 32px;
+        padding: 46px 0;
+    }
+
+    .footer-brand {
+        font-size: 32px;
+        letter-spacing: 6px;
+    }
+
+    footer p,
+    footer a {
+        font-size: 15px;
     }
 }

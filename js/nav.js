@@ -1,82 +1,68 @@
 /* =========================================================
-   HIFEM — NAV
-   Controle do menu responsivo
+   HIFEM — NAV JS
+   Controle simples do menu mobile
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const checkbox = document.getElementById("nav-check");
-    const menu = document.querySelector(".navbar-btn-list");
-    const menuButton = document.querySelector(".nav-checkbtn");
-    const links = document.querySelectorAll(".navbar-btn-list a");
+    const navCheck = document.getElementById("nav-check");
+    const navLinks = document.querySelectorAll(".navbar-btn-list a");
+    const navButton = document.querySelector(".nav-checkbtn");
 
-    if (!checkbox || !menu) {
+    if (!navCheck) {
         return;
     }
 
-    const mobileQuery = window.matchMedia("(max-width: 920px)");
-
     function fecharMenu() {
-        checkbox.checked = false;
-
-        if (mobileQuery.matches) {
-            menu.classList.add("inactive");
-        }
+        navCheck.checked = false;
     }
 
-    function abrirMenu() {
-        checkbox.checked = true;
-        menu.classList.remove("inactive");
+    function abrirOuFecharMenu() {
+        navCheck.checked = !navCheck.checked;
     }
 
-    function atualizarEstadoInicial() {
-        if (mobileQuery.matches) {
-            if (checkbox.checked) {
-                menu.classList.remove("inactive");
-            } else {
-                menu.classList.add("inactive");
-            }
-        } else {
-            /*
-               No desktop, o menu deve ficar sempre visível.
-               Isso evita que a classe "inactive" esconda o menu
-               quando a tela for aumentada.
-            */
-            menu.classList.remove("inactive");
-            checkbox.checked = false;
-        }
-    }
-
-    checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-            abrirMenu();
-        } else {
-            fecharMenu();
-        }
-    });
-
-    links.forEach((link) => {
+    /* Fecha o menu ao clicar em qualquer link */
+    navLinks.forEach((link) => {
         link.addEventListener("click", () => {
             fecharMenu();
         });
     });
 
+    /* Permite abrir/fechar com Enter ou Espaço no botão */
+    if (navButton) {
+        navButton.setAttribute("tabindex", "0");
+        navButton.setAttribute("role", "button");
+        navButton.setAttribute("aria-controls", "nav-check");
+        navButton.setAttribute("aria-expanded", "false");
+
+        navButton.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                abrirOuFecharMenu();
+            }
+        });
+    }
+
+    /* Atualiza aria-expanded */
+    navCheck.addEventListener("change", () => {
+        if (navButton) {
+            navButton.setAttribute(
+                "aria-expanded",
+                navCheck.checked ? "true" : "false"
+            );
+        }
+    });
+
+    /* Fecha com ESC */
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
             fecharMenu();
         }
     });
 
-    document.addEventListener("click", (event) => {
-        const clicouNoMenu = menu.contains(event.target);
-        const clicouNoBotao = menuButton && menuButton.contains(event.target);
-        const clicouNoCheckbox = checkbox.contains(event.target);
-
-        if (!clicouNoMenu && !clicouNoBotao && !clicouNoCheckbox) {
+    /* Fecha ao sair do mobile */
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 820) {
             fecharMenu();
         }
     });
-
-    mobileQuery.addEventListener("change", atualizarEstadoInicial);
-
-    atualizarEstadoInicial();
 });

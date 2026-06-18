@@ -17,6 +17,10 @@ main {
     animation: fadeIn 0.45s ease both;
 }
 
+main.wide {
+    width: min(var(--max-width), calc(100% - 72px));
+}
+
 /* =========================================================
    CABEÇALHO DAS PÁGINAS INTERNAS
    ========================================================= */
@@ -25,6 +29,11 @@ main {
 .section-heading {
     max-width: 820px;
     margin-bottom: 44px;
+}
+
+.page-heading.full,
+.section-heading.full {
+    max-width: 100%;
 }
 
 /* Pequeno marcador superior */
@@ -134,6 +143,14 @@ main {
     padding: 32px 34px;
 }
 
+.content-card.compact {
+    padding: 26px 28px;
+}
+
+.content-card.highlight {
+    border-left: 4px solid var(--gold);
+}
+
 /* Texto comum dentro dos cards */
 .content-card p {
     max-width: 860px;
@@ -187,9 +204,33 @@ main {
         border-color 0.2s ease;
 }
 
-.text-link:hover {
+.text-link:hover,
+.text-link:focus-visible {
     color: var(--gold);
     border-color: var(--gold);
+    outline: none;
+}
+
+/* =========================================================
+   FIGURAS / IMAGENS EM PÁGINAS INTERNAS
+   ========================================================= */
+
+.content-figure {
+    margin: 30px 0;
+}
+
+.content-figure img {
+    width: 100%;
+    border: 1px solid rgba(184, 155, 96, 0.24);
+    background: var(--paper-2);
+}
+
+.content-figure figcaption {
+    margin-top: 10px;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 /* =========================================================
@@ -202,8 +243,67 @@ main {
     gap: 26px;
 }
 
+.page-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .page-grid .content-card {
     height: 100%;
+}
+
+/* =========================================================
+   LISTAS SIMPLES / METADADOS
+   ========================================================= */
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.clean-list li:last-child {
+    border-bottom: 0;
+}
+
+.meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.meta-list li {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 18px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.meta-list li:last-child {
+    border-bottom: 0;
+}
+
+.meta-list strong {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 /* =========================================================
@@ -222,6 +322,29 @@ main {
     line-height: 1.7;
 }
 
+.empty-state strong {
+    color: var(--blue-dark);
+}
+
+/* =========================================================
+   AVISO / NOTA
+   ========================================================= */
+
+.notice-box {
+    max-width: 860px;
+
+    padding: 24px 28px;
+    margin: 28px 0;
+
+    background: rgba(184, 155, 96, 0.11);
+    border: 1px solid rgba(184, 155, 96, 0.26);
+    border-left: 4px solid var(--gold);
+
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.72;
+}
+
 /* =========================================================
    RODAPÉ EM PÁGINAS INTERNAS
    ========================================================= */
@@ -234,8 +357,15 @@ footer {
    RESPONSIVO
    ========================================================= */
 
+@media (max-width: 1100px) {
+    .page-grid.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
-    main {
+    main,
+    main.wide {
         width: calc(100% - 44px);
         padding-top: calc(var(--nav-height) + 52px);
     }
@@ -257,7 +387,8 @@ footer {
         font-size: 20px;
     }
 
-    .page-grid {
+    .page-grid,
+    .page-grid.three {
         grid-template-columns: 1fr;
     }
 
@@ -266,8 +397,16 @@ footer {
     }
 }
 
+@media (max-width: 640px) {
+    .meta-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
+
 @media (max-width: 560px) {
-    main {
+    main,
+    main.wide {
         width: calc(100% - 34px);
         padding-top: calc(var(--nav-height) + 42px);
     }
@@ -299,10 +438,21 @@ footer {
         padding: 24px;
     }
 
+    .content-card.compact {
+        padding: 22px;
+    }
+
     .content-card p,
-    .content-card li {
+    .content-card li,
+    .clean-list li,
+    .meta-list li {
         font-size: 15.8px;
         line-height: 1.72;
+    }
+
+    .notice-box {
+        padding: 22px;
+        font-size: 15.8px;
     }
 
     .sep {
