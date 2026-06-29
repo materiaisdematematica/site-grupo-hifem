@@ -1,461 +1,526 @@
 /* =========================================================
-   HIFEM — SHARED
-   Estrutura comum das páginas internas
-   ========================================================= */
+HIFEM — SHARED
+Estrutura comum das páginas internas
+========================================================= */
 
 @import "./global.css";
 
 /* =========================================================
-   ÁREA PRINCIPAL
-   ========================================================= */
+ÁREA PRINCIPAL
+========================================================= */
 
 main {
-    width: min(1120px, calc(100% - 72px));
-    margin: 0 auto;
-    padding: calc(var(--nav-height) + 64px) 0 44px;
+width: min(1080px, calc(100% - 96px));
+margin: 0 auto;
+padding: calc(var(--nav-height) + 64px) 0 44px;
 
-    animation: fadeIn 0.45s ease both;
+```
+animation: fadeIn 0.45s ease both;
+```
+
 }
 
 main.wide {
-    width: min(var(--max-width), calc(100% - 72px));
+width: min(1180px, calc(100% - 112px));
 }
 
 /* =========================================================
-   CABEÇALHO DAS PÁGINAS INTERNAS
-   ========================================================= */
+CABEÇALHO DAS PÁGINAS INTERNAS
+========================================================= */
 
 .page-heading,
 .section-heading {
-    max-width: 820px;
-    margin-bottom: 44px;
+max-width: 820px;
+margin-bottom: 44px;
 }
 
 .page-heading.full,
 .section-heading.full {
-    max-width: 100%;
+max-width: 100%;
 }
 
-/* Pequeno marcador superior */
 .page-kicker,
 .section-heading span {
-    display: block;
+display: block;
 
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 3px;
+```
+color: var(--gold);
+text-transform: uppercase;
+letter-spacing: 3px;
 
-    font-size: 12px;
-    font-weight: 800;
+font-size: 12px;
+font-weight: 800;
 
-    margin-bottom: 16px;
+margin-bottom: 16px;
+```
+
 }
 
-/* Título principal da página */
 .page-heading h1,
 .section-heading h1 {
-    color: var(--blue-dark);
+max-width: 760px;
+margin-bottom: 22px;
 
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(40px, 4.4vw, 60px);
-    line-height: 1.02;
-    font-weight: 500;
-    letter-spacing: 0.4px;
+```
+color: var(--blue-dark);
 
-    max-width: 760px;
-    margin-bottom: 22px;
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(40px, 4.4vw, 60px);
+line-height: 1.02;
+font-weight: 500;
+letter-spacing: 0.4px;
+```
+
 }
 
-/* Texto de abertura da página */
 .page-lead {
-    max-width: 780px;
+max-width: 780px;
 
-    color: var(--text);
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(19px, 1.55vw, 22px);
-    line-height: 1.7;
-    font-weight: 400;
+```
+color: var(--text);
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(19px, 1.55vw, 22px);
+line-height: 1.7;
+font-weight: 400;
+```
+
 }
 
 /* =========================================================
-   TÍTULOS INTERNOS E ETIQUETAS
-   ========================================================= */
+TÍTULOS INTERNOS E ETIQUETAS
+========================================================= */
 
-/* Título dentro de cards ou seções */
 .section-header {
-    color: var(--blue-dark);
+max-width: 760px;
+margin-bottom: 18px;
 
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(29px, 3vw, 40px);
-    line-height: 1.08;
-    font-weight: 500;
+```
+color: var(--blue-dark);
 
-    max-width: 760px;
-    margin-bottom: 18px;
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(29px, 3vw, 40px);
+line-height: 1.08;
+font-weight: 500;
+```
+
 }
 
-/* Etiqueta pequena, usada como "E-mail", "Pesquisa", "Grupo", etc. */
 .info {
-    display: block;
+display: block;
 
-    color: var(--gold);
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2.2px;
+```
+margin-bottom: 14px;
 
-    margin-bottom: 14px;
+color: var(--gold);
+font-family: "Inter", system-ui, sans-serif;
+font-size: 11px;
+font-weight: 800;
+text-transform: uppercase;
+letter-spacing: 2.2px;
+```
+
 }
 
-/* Introdução textual dentro de blocos */
 .section-introduction {
-    max-width: 820px;
+max-width: 820px;
 
-    color: var(--text);
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(18px, 1.45vw, 21px);
-    line-height: 1.72;
+```
+color: var(--text);
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(18px, 1.45vw, 21px);
+line-height: 1.72;
+```
+
 }
 
 /* =========================================================
-   SEPARADORES
-   ========================================================= */
+SEPARADORES
+========================================================= */
 
 .sep {
-    height: 1px;
-    width: 100%;
+width: 100%;
+height: 1px;
 
-    background: rgba(184, 155, 96, 0.32);
+```
+margin: 42px 0 46px;
 
-    margin: 38px 0 42px;
+background: rgba(184, 155, 96, 0.32);
+```
+
 }
 
 /* =========================================================
-   CARDS E BLOCOS DE CONTEÚDO
-   ========================================================= */
+CARDS E BLOCOS DE CONTEÚDO
+========================================================= */
 
 .content-card {
-    background: rgba(250, 248, 242, 0.76);
-    border: 1px solid rgba(184, 155, 96, 0.22);
-    box-shadow: var(--shadow);
+padding: 36px 40px;
 
-    padding: 32px 34px;
+```
+background: rgba(250, 248, 242, 0.76);
+border: 1px solid rgba(184, 155, 96, 0.22);
+box-shadow: var(--shadow);
+```
+
 }
 
 .content-card.compact {
-    padding: 26px 28px;
+padding: 28px 32px;
 }
 
 .content-card.highlight {
-    border-left: 4px solid var(--gold);
+border-left: 4px solid var(--gold);
 }
 
-/* Texto comum dentro dos cards */
 .content-card p {
-    max-width: 860px;
+max-width: 860px;
 
-    color: var(--text);
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 16.5px;
-    line-height: 1.75;
+```
+color: var(--text);
+font-family: "Inter", system-ui, sans-serif;
+font-size: 16.5px;
+line-height: 1.75;
+```
+
 }
 
-/* Espaçamento entre parágrafos dentro dos cards */
 .content-card p + p {
-    margin-top: 16px;
+margin-top: 16px;
 }
 
-/* Quando o card começa com uma introdução mais ensaística */
 .content-card .section-introduction {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(18px, 1.4vw, 21px);
-    line-height: 1.72;
+font-family: "Cormorant Garamond", Georgia, serif;
+font-size: clamp(18px, 1.4vw, 21px);
+line-height: 1.72;
 }
 
-/* Listas dentro de cards */
 .content-card ul,
 .content-card ol {
-    margin-top: 18px;
-    padding-left: 22px;
+margin-top: 18px;
+padding-left: 22px;
 }
 
 .content-card li {
-    margin-bottom: 10px;
+margin-bottom: 10px;
 
-    color: var(--text);
-    font-size: 16.5px;
-    line-height: 1.7;
+```
+color: var(--text);
+font-size: 16.5px;
+line-height: 1.7;
+```
+
 }
 
 /* =========================================================
-   LINKS TEXTUAIS
-   ========================================================= */
+LINKS TEXTUAIS
+========================================================= */
 
 .text-link {
-    color: var(--blue);
-    font-weight: 800;
-    text-decoration: none;
+color: var(--blue);
+font-weight: 800;
+text-decoration: none;
 
-    border-bottom: 1px solid rgba(184, 155, 96, 0.5);
+```
+border-bottom: 1px solid rgba(184, 155, 96, 0.5);
 
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+```
+
 }
 
 .text-link:hover,
 .text-link:focus-visible {
-    color: var(--gold);
-    border-color: var(--gold);
-    outline: none;
+color: var(--gold);
+border-color: var(--gold);
+outline: none;
 }
 
 /* =========================================================
-   FIGURAS / IMAGENS EM PÁGINAS INTERNAS
-   ========================================================= */
+FIGURAS / IMAGENS EM PÁGINAS INTERNAS
+========================================================= */
 
 .content-figure {
-    margin: 30px 0;
+margin: 30px 0;
 }
 
 .content-figure img {
-    width: 100%;
-    border: 1px solid rgba(184, 155, 96, 0.24);
-    background: var(--paper-2);
+width: 100%;
+
+```
+background: var(--paper-2);
+border: 1px solid rgba(184, 155, 96, 0.24);
+```
+
 }
 
 .content-figure figcaption {
-    margin-top: 10px;
+margin-top: 10px;
 
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.6;
+```
+color: var(--muted);
+font-size: 13px;
+line-height: 1.6;
+```
+
 }
 
 /* =========================================================
-   GRIDS
-   ========================================================= */
+GRIDS
+========================================================= */
 
 .page-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 30px;
 }
 
 .page-grid.three {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .page-grid .content-card {
-    height: 100%;
+height: 100%;
 }
 
 /* =========================================================
-   LISTAS SIMPLES / METADADOS
-   ========================================================= */
+LISTAS SIMPLES / METADADOS
+========================================================= */
 
 .clean-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .clean-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+padding: 12px 0;
 
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
+```
+border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+
+color: var(--text);
+font-size: 16px;
+line-height: 1.7;
+```
+
 }
 
 .clean-list li:last-child {
-    border-bottom: 0;
+border-bottom: 0;
 }
 
 .meta-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
 
 .meta-list li {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 18px;
+display: grid;
+grid-template-columns: 150px 1fr;
+gap: 18px;
 
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+```
+padding: 12px 0;
 
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.65;
+border-bottom: 1px solid rgba(184, 155, 96, 0.18);
+
+color: var(--text);
+font-size: 16px;
+line-height: 1.65;
+```
+
 }
 
 .meta-list li:last-child {
-    border-bottom: 0;
+border-bottom: 0;
 }
 
 .meta-list strong {
-    color: var(--gold);
+color: var(--gold);
 
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+```
+font-size: 11px;
+font-weight: 800;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+```
+
 }
 
 /* =========================================================
-   ESTADO VAZIO / PÁGINA EM CONSTRUÇÃO
-   ========================================================= */
+ESTADO VAZIO / PÁGINA EM CONSTRUÇÃO
+========================================================= */
 
 .empty-state {
-    background: rgba(250, 248, 242, 0.72);
-    border: 1px solid rgba(184, 155, 96, 0.22);
-    box-shadow: var(--shadow);
+padding: 36px 40px;
 
-    padding: 34px;
+```
+background: rgba(250, 248, 242, 0.72);
+border: 1px solid rgba(184, 155, 96, 0.22);
+box-shadow: var(--shadow);
 
-    color: var(--muted);
-    font-size: 17px;
-    line-height: 1.7;
+color: var(--muted);
+font-size: 17px;
+line-height: 1.7;
+```
+
 }
 
 .empty-state strong {
-    color: var(--blue-dark);
+color: var(--blue-dark);
 }
 
 /* =========================================================
-   AVISO / NOTA
-   ========================================================= */
+AVISO / NOTA
+========================================================= */
 
 .notice-box {
-    max-width: 860px;
+max-width: 860px;
 
-    padding: 24px 28px;
-    margin: 28px 0;
+```
+padding: 26px 30px;
+margin: 28px 0;
 
-    background: rgba(184, 155, 96, 0.11);
-    border: 1px solid rgba(184, 155, 96, 0.26);
-    border-left: 4px solid var(--gold);
+background: rgba(184, 155, 96, 0.11);
+border: 1px solid rgba(184, 155, 96, 0.26);
+border-left: 4px solid var(--gold);
 
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.72;
+color: var(--text);
+font-size: 16px;
+line-height: 1.72;
+```
+
 }
 
 /* =========================================================
-   RODAPÉ EM PÁGINAS INTERNAS
-   ========================================================= */
+RODAPÉ EM PÁGINAS INTERNAS
+========================================================= */
 
 footer {
-    margin-top: 76px;
+margin-top: 76px;
 }
 
 /* =========================================================
-   RESPONSIVO
-   ========================================================= */
+RESPONSIVO
+========================================================= */
 
 @media (max-width: 1100px) {
-    .page-grid.three {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+main,
+main.wide {
+width: calc(100% - 72px);
+padding-top: calc(var(--nav-height) + 96px);
+}
+
+```
+.page-grid.three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+```
+
 }
 
 @media (max-width: 900px) {
-    main,
-    main.wide {
-        width: calc(100% - 44px);
-        padding-top: calc(var(--nav-height) + 52px);
-    }
+main,
+main.wide {
+width: calc(100% - 52px);
+padding-top: calc(var(--nav-height) + 52px);
+}
 
-    .page-heading,
-    .section-heading {
-        max-width: 100%;
-        margin-bottom: 38px;
-    }
+```
+.page-heading,
+.section-heading {
+    max-width: 100%;
+    margin-bottom: 38px;
+}
 
-    .page-heading h1,
-    .section-heading h1 {
-        max-width: 100%;
-        font-size: clamp(36px, 8vw, 52px);
-    }
+.page-heading h1,
+.section-heading h1 {
+    max-width: 100%;
+    font-size: clamp(36px, 8vw, 52px);
+}
 
-    .page-lead {
-        max-width: 100%;
-        font-size: 20px;
-    }
+.page-lead {
+    max-width: 100%;
+    font-size: 20px;
+}
 
-    .page-grid,
-    .page-grid.three {
-        grid-template-columns: 1fr;
-    }
+.page-grid,
+.page-grid.three {
+    grid-template-columns: 1fr;
+}
 
-    .content-card {
-        padding: 28px;
-    }
+.content-card {
+    padding: 30px 32px;
+}
+```
+
 }
 
 @media (max-width: 640px) {
-    .meta-list li {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
+.meta-list li {
+grid-template-columns: 1fr;
+gap: 4px;
+}
 }
 
 @media (max-width: 560px) {
-    main,
-    main.wide {
-        width: calc(100% - 34px);
-        padding-top: calc(var(--nav-height) + 42px);
-    }
+main,
+main.wide {
+width: calc(100% - 34px);
+padding-top: calc(var(--nav-height) + 42px);
+}
 
-    .page-kicker,
-    .section-heading span,
-    .info {
-        font-size: 10.5px;
-        letter-spacing: 2px;
-    }
+```
+.page-kicker,
+.section-heading span,
+.info {
+    font-size: 10.5px;
+    letter-spacing: 2px;
+}
 
-    .page-heading h1,
-    .section-heading h1 {
-        font-size: clamp(34px, 10vw, 46px);
-        line-height: 1.04;
-    }
+.page-heading h1,
+.section-heading h1 {
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.04;
+}
 
-    .page-lead,
-    .section-introduction {
-        font-size: 18.5px;
-        line-height: 1.68;
-    }
+.page-lead,
+.section-introduction {
+    font-size: 18.5px;
+    line-height: 1.68;
+}
 
-    .section-header {
-        font-size: 30px;
-    }
+.section-header {
+    font-size: 30px;
+}
 
-    .content-card {
-        padding: 24px;
-    }
+.content-card {
+    padding: 26px;
+}
 
-    .content-card.compact {
-        padding: 22px;
-    }
+.content-card.compact {
+    padding: 22px;
+}
 
-    .content-card p,
-    .content-card li,
-    .clean-list li,
-    .meta-list li {
-        font-size: 15.8px;
-        line-height: 1.72;
-    }
+.content-card p,
+.content-card li,
+.clean-list li,
+.meta-list li {
+    font-size: 15.8px;
+    line-height: 1.72;
+}
 
-    .notice-box {
-        padding: 22px;
-        font-size: 15.8px;
-    }
+.notice-box {
+    padding: 22px;
+    font-size: 15.8px;
+}
 
-    .sep {
-        margin: 32px 0 34px;
-    }
+.sep {
+    margin: 32px 0 34px;
+}
+```
+
 }

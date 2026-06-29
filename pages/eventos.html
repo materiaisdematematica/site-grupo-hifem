@@ -1,475 +1,541 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+```
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    />
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+/>
 
-    <!-- Ícones do menu mobile -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+<!-- Ícones do menu mobile -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/nav.css" />
-    <link rel="stylesheet" href="../css/shared.css" />
-    <link rel="stylesheet" href="../css/eventos.css" />
+<!-- CSS -->
+<link rel="stylesheet" href="../css/nav.css" />
+<link rel="stylesheet" href="../css/shared.css" />
+<link rel="stylesheet" href="../css/eventos.css" />
 
-    <title>HIFEM | Eventos</title>
+<title>HIFEM | Eventos</title>
+```
+
 </head>
 
 <body>
 
-    <!-- MENU SUPERIOR -->
-    <nav class="navbar">
-        <div class="title">
-            <img class="nav-logo" src="../assets/img/logo-hifem.png" alt="Logo HIFEM" />
+```
+<!-- MENU SUPERIOR -->
+<nav class="navbar">
+    <div class="title">
+        <img class="nav-logo" src="../assets/img/logo-hifem.png" alt="Logo HIFEM" />
 
-            <div>
-                <h2>
-                    <a href="../index.html">HIFEM</a>
-                </h2>
-                <p>História, Filosofia e Educação Matemática</p>
+        <div>
+            <h2>
+                <a href="../index.html">HIFEM</a>
+            </h2>
+            <p>História, Filosofia e Educação Matemática</p>
+        </div>
+    </div>
+
+    <input type="checkbox" id="nav-check" />
+
+    <label for="nav-check" class="nav-checkbtn" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <div class="navbar-btn-list inactive">
+        <a href="../index.html">Início</a>
+        <a href="./sobre.html">Sobre</a>
+        <a href="./docentes.html">Integrantes</a>
+        <a href="./publicacoes.html">Publicações</a>
+        <a href="./materiais.html">Materiais de Ensino</a>
+        <a class="active" href="./eventos.html" aria-current="page">Eventos</a>
+        <a href="./links.html">Links</a>
+        <a href="./contato.html">Contato</a>
+    </div>
+</nav>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="wide">
+
+    <header class="page-heading">
+        <span class="page-kicker">Eventos</span>
+
+        <h1>
+            Encontros, seminários e atividades do HIFEM
+        </h1>
+
+        <p class="page-lead">
+            Esta página reúne informações sobre os encontros nacionais do HIFEM,
+            eventos acadêmicos, atividades de formação, rodas de conversa e ações
+            de divulgação científica promovidas ou relacionadas ao grupo.
+        </p>
+    </header>
+
+
+    <!-- EVENTO EM DESTAQUE -->
+    <section class="evento-destaque">
+
+        <div class="evento-destaque-texto">
+            <span class="info">Evento em destaque</span>
+
+            <h2>
+                XI Encontro Nacional do HIFEM
+            </h2>
+
+            <p>
+                Em 2026, ano em que o HIFEM completa 30 anos, será realizado o
+                XI Encontro Nacional do HIFEM, dando continuidade à trajetória de
+                encontros voltados ao diálogo, à divulgação científica e à discussão
+                das pesquisas produzidas pelo grupo.
+            </p>
+
+            <ul class="evento-dados">
+                <li>
+                    <strong>Data</strong>
+                    <span>09 e 10 de novembro de 2026</span>
+                </li>
+
+                <li>
+                    <strong>Modalidade</strong>
+                    <span>Evento presencial</span>
+                </li>
+
+                <li>
+                    <strong>Local</strong>
+                    <span>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo — São Paulo/SP</span>
+                </li>
+
+                <li>
+                    <strong>Contexto</strong>
+                    <span>Comemoração dos 30 anos do HIFEM</span>
+                </li>
+            </ul>
+
+            <div class="evento-actions">
+                <a class="btn" href="./noticias/xi-encontro-2026.html">
+                    Ler notícia completa
+                </a>
+
+                <a class="btn btn-secondary" href="#programacao-xi-hifem-2026">
+                    Ver programação preliminar
+                </a>
             </div>
         </div>
 
-        <input type="checkbox" id="nav-check" />
+        <figure class="evento-destaque-img">
+            <img
+                src="../assets/eventos/xi-encontro-nacional-hifem-2026.png"
+                alt="Folder de divulgação do XI Encontro Nacional do HIFEM"
+            />
 
-        <label for="nav-check" class="nav-checkbtn" aria-label="Abrir menu">
-            <i class="fas fa-bars"></i>
-        </label>
+            <figcaption>
+                Folder de divulgação do XI Encontro Nacional do HIFEM.
+            </figcaption>
+        </figure>
 
-        <div class="navbar-btn-list inactive">
-            <a href="../index.html">Início</a>
-            <a href="./sobre.html">Sobre</a>
-            <a href="./docentes.html">Integrantes</a>
-            <a href="./publicacoes.html">Publicações</a>
-            <a href="./materiais.html">Materiais de Ensino</a>
-            <a class="active" href="./eventos.html">Eventos</a>
-            <a href="./links.html">Links</a>
-            <a href="./contato.html">Contato</a>
-        </div>
-    </nav>
+    </section>
 
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="wide">
+    <div class="sep"></div>
 
-        <header class="page-heading">
-            <span class="page-kicker">Eventos</span>
+
+    <!-- PROGRAMAÇÃO PRELIMINAR -->
+    <section id="programacao-xi-hifem-2026" class="eventos-section">
+
+        <header class="section-heading">
+            <span>Programação preliminar</span>
 
             <h1>
-                Encontros, seminários e atividades do HIFEM
+                XI Encontro Nacional do HIFEM 2026
             </h1>
 
             <p class="page-lead">
-                Esta página reúne informações sobre os encontros nacionais do HIFEM,
-                eventos acadêmicos, atividades de formação, rodas de conversa e ações
-                de divulgação científica promovidas ou relacionadas ao grupo.
+                A programação preliminar do encontro prevê conferência de abertura,
+                rodas de conversa, lançamento do livro comemorativo dos 30 anos do HIFEM
+                e palestra de encerramento.
+            </p>
+        </header>
+
+        <div class="page-grid">
+
+            <article class="content-card">
+                <span class="info">Segunda-feira, 09/11</span>
+
+                <h2 class="section-header">
+                    Abertura, conferência e lançamento
+                </h2>
+
+                <ul class="clean-list">
+                    <li><strong>14h</strong> — Abertura: Andréia e Adriana</li>
+                    <li><strong>14h30 às 16h</strong> — Palestra de abertura: Virgínia</li>
+                    <li><strong>16h às 16h30</strong> — Café</li>
+                    <li><strong>16h30 às 18h</strong> — Roda de conversa 1: Adriana e André</li>
+                    <li><strong>18h às 19h</strong> — Lançamento do livro dos 30 anos do HIFEM</li>
+                    <li><strong>19h30</strong> — Jantar</li>
+                </ul>
+            </article>
+
+            <article class="content-card">
+                <span class="info">Terça-feira, 10/11</span>
+
+                <h2 class="section-header">
+                    Rodas de conversa e palestra
+                </h2>
+
+                <ul class="clean-list">
+                    <li><strong>08h30 às 10h</strong> — Roda de conversa 3: Miguel e Mathias</li>
+                    <li><strong>10h às 10h30</strong> — Café</li>
+                    <li><strong>10h30 às 12h</strong> — Roda de conversa 4: Andréia e Zionice</li>
+                    <li><strong>12h às 13h30</strong> — Almoço</li>
+                    <li><strong>13h30 às 15h</strong> — Roda de conversa 5: Adriel e Elhma</li>
+                    <li><strong>15h às 15h30</strong> — Café</li>
+                    <li><strong>15h30 às 17h</strong> — Roda de conversa 6: Sergio e Neuma</li>
+                    <li><strong>17h às 17h30</strong> — Café</li>
+                    <li>
+                        <strong>17h30 às 19h</strong> — Palestra: Antonio M. Oller Marcén.
+                        <br />
+                        <em>
+                            Historia de la educación matemática y perspectiva de género:
+                            dos experiencias en formación de profesorado de primaria.
+                        </em>
+                    </li>
+                </ul>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <div class="sep"></div>
+
+
+    <!-- ENCONTROS NACIONAIS -->
+    <section class="eventos-section">
+
+        <header class="section-heading">
+            <span>Memória dos encontros</span>
+
+            <h1>
+                Encontros Nacionais do HIFEM
+            </h1>
+
+            <p class="page-lead">
+                A prática dos encontros nacionais teve início por ocasião dos 20 anos
+                do HIFEM, com o objetivo de promover espaços de estudo, diálogo,
+                divulgação e discussão dos trabalhos produzidos por seus membros.
             </p>
         </header>
 
 
-        <!-- EVENTO EM DESTAQUE -->
-        <section class="evento-destaque">
+        <div class="eventos-timeline">
 
-            <div class="evento-destaque-texto">
-                <span class="info">Evento em destaque</span>
+            <article class="timeline-item">
+                <span class="timeline-year">2016</span>
 
-                <h2>
-                    XI Encontro Nacional do HIFEM
+                <div>
+                    <h3>I Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Primeira edição dos encontros nacionais, realizada na UNESP,
+                        em Rio Claro/SP, no contexto comemorativo dos 20 anos do HIFEM.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2017</span>
+
+                <div>
+                    <h3>II Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada na UFRN, em Natal/RN, ampliando a circulação
+                        das discussões do grupo para a região Nordeste.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2018</span>
+
+                <div>
+                    <h3>III Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada na UFRGS, em Porto Alegre/RS, fortalecendo a
+                        presença do grupo em diferentes regiões do país.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2019</span>
+
+                <div>
+                    <h3>IV Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada na UFABC, em Santo André/SP, dedicada à
+                        apresentação de pesquisas, debates acadêmicos e circulação de
+                        trabalhos do grupo.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2020</span>
+
+                <div>
+                    <h3>V Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada em formato remoto, em razão das restrições
+                        provocadas pela pandemia de COVID-19.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2021</span>
+
+                <div>
+                    <h3>VI Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada em formato remoto, mantendo os espaços de
+                        apresentação, estudo e discussão coletiva do grupo.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2022</span>
+
+                <div>
+                    <h3>VII Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição vinculada à continuidade dos encontros nacionais do
+                        HIFEM, com registros de trabalhos e discussões referentes ao
+                        ano de 2022.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2023</span>
+
+                <div>
+                    <h3>VIII Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada na UFABC, em Santo André/SP, com atividades
+                        de apresentação, debate e socialização de pesquisas do grupo.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2024</span>
+
+                <div>
+                    <h3>IX Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição realizada em formato virtual, dando continuidade aos
+                        encontros nacionais e às discussões coletivas do HIFEM.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="timeline-item">
+                <span class="timeline-year">2025</span>
+
+                <div>
+                    <h3>X Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição online realizada entre 25 e 28 de novembro de 2025,
+                        promovida pelo Grupo de Pesquisa História, Filosofia e
+                        Educação Matemática.
+                    </p>
+
+                    <a
+                        class="text-link"
+                        href="https://www.even3.com.br/e/encontro-do-hifem-2025-616116"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Acessar página do evento
+                    </a>
+                </div>
+            </article>
+
+
+            <article class="timeline-item destaque">
+                <span class="timeline-year">2026</span>
+
+                <div>
+                    <h3>XI Encontro Nacional do HIFEM</h3>
+
+                    <p>
+                        Edição comemorativa vinculada aos 30 anos de trajetória do
+                        grupo de pesquisa, prevista para 09 e 10 de novembro de 2026,
+                        no Instituto Federal de São Paulo.
+                    </p>
+
+                    <a class="text-link" href="#programacao-xi-hifem-2026">
+                        Ver programação preliminar
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <div class="sep"></div>
+
+
+    <!-- OUTRAS ATIVIDADES -->
+    <section class="eventos-section">
+
+        <header class="section-heading">
+            <span>Atividades do grupo</span>
+
+            <h1>
+                Seminários, rodas de conversa e ações formativas
+            </h1>
+
+            <p class="page-lead">
+                Além dos encontros nacionais, o HIFEM realiza e participa de atividades
+                acadêmicas voltadas à formação, à pesquisa, à divulgação científica e
+                à socialização de estudos em História, Filosofia e Educação Matemática.
+            </p>
+        </header>
+
+
+        <div class="page-grid">
+
+            <article class="content-card">
+                <span class="info">Estudos coletivos</span>
+
+                <h2 class="section-header">
+                    Textos e Conversas
                 </h2>
 
                 <p>
-                    Em 2026, ano em que o HIFEM completa 30 anos, será realizado o
-                    XI Encontro Nacional do HIFEM, dando continuidade à trajetória de
-                    encontros voltados ao diálogo, à divulgação científica e à discussão
-                    das pesquisas produzidas pelo grupo.
+                    Espaço de leitura, estudo e discussão coletiva de textos, livros
+                    e referências teóricas relacionadas aos interesses de pesquisa do
+                    grupo.
                 </p>
 
-                <ul class="evento-dados">
-                    <li>
-                        <strong>Data</strong>
-                        <span>09 e 10 de novembro de 2026</span>
-                    </li>
-
-                    <li>
-                        <strong>Modalidade</strong>
-                        <span>Evento presencial</span>
-                    </li>
-
-                    <li>
-                        <strong>Local</strong>
-                        <span>Instituto Federal de Educação, Ciência e Tecnologia de São Paulo — São Paulo/SP</span>
-                    </li>
-
-                    <li>
-                        <strong>Contexto</strong>
-                        <span>Comemoração dos 30 anos do HIFEM</span>
-                    </li>
-                </ul>
-
-                <div class="evento-actions">
-                    <a class="btn" href="./noticias/xi-encontro-2026.html">
-                        Ler notícia completa
+                <p>
+                    <a class="text-link" href="./noticias/textos-e-conversas-chartier-inscrever-e-apagar.html">
+                        Ver leitura atual
                     </a>
-
-                    <a class="btn btn-secondary" href="./noticias.html">
-                        Ver atualizações
-                    </a>
-                </div>
-            </div>
-
-            <figure class="evento-destaque-img">
-                <img
-                    src="../assets/noticias/xi-encontro-nacional-hifem-2026.png"
-                    alt="Folder de divulgação do XI Encontro Nacional do HIFEM"
-                />
-
-                <figcaption>
-                    Folder de divulgação do XI Encontro Nacional do HIFEM.
-                </figcaption>
-            </figure>
-
-        </section>
-
-
-        <div class="sep"></div>
-
-
-        <!-- ENCONTROS NACIONAIS -->
-        <section class="eventos-section">
-
-            <header class="section-heading">
-                <span>Memória dos encontros</span>
-
-                <h1>
-                    Encontros Nacionais do HIFEM
-                </h1>
-
-                <p class="page-lead">
-                    A prática dos encontros nacionais teve início por ocasião dos 20 anos
-                    do HIFEM, com o objetivo de promover espaços de estudo, diálogo,
-                    divulgação e discussão dos trabalhos produzidos por seus membros.
                 </p>
-            </header>
+            </article>
 
 
-            <div class="eventos-timeline">
+            <article class="content-card">
+                <span class="info">Divulgação científica</span>
 
-                <!-- I ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2016</span>
-
-                    <div>
-                        <h3>I Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Primeira edição dos encontros nacionais, realizada na UNESP,
-                            em Rio Claro/SP, no contexto comemorativo dos 20 anos do HIFEM.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- II ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2017</span>
-
-                    <div>
-                        <h3>II Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada na UFRN, em Natal/RN, ampliando a circulação
-                            das discussões do grupo para a região Nordeste.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- III ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2018</span>
-
-                    <div>
-                        <h3>III Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada na UFRGS, em Porto Alegre/RS, fortalecendo a
-                            presença do grupo em diferentes regiões do país.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- IV ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2019</span>
-
-                    <div>
-                        <h3>IV Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada na UFABC, em Santo André/SP, dedicada à
-                            apresentação de pesquisas, debates acadêmicos e circulação de
-                            trabalhos do grupo.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- V ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2020</span>
-
-                    <div>
-                        <h3>V Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada em formato remoto, em razão das restrições
-                            provocadas pela pandemia de COVID-19.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- VI ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2021</span>
-
-                    <div>
-                        <h3>VI Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada em formato remoto, mantendo os espaços de
-                            apresentação, estudo e discussão coletiva do grupo.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- VII ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2022</span>
-
-                    <div>
-                        <h3>VII Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição vinculada à continuidade dos encontros nacionais do
-                            HIFEM, com registros de trabalhos e discussões referentes ao
-                            ano de 2022.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- VIII ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2023</span>
-
-                    <div>
-                        <h3>VIII Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada na UFABC, em Santo André/SP, com atividades
-                            de apresentação, debate e socialização de pesquisas do grupo.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- IX ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2024</span>
-
-                    <div>
-                        <h3>IX Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição realizada em formato virtual, dando continuidade aos
-                            encontros nacionais e às discussões coletivas do HIFEM.
-                        </p>
-                    </div>
-                </article>
-
-
-                <!-- X ENCONTRO -->
-                <article class="timeline-item">
-                    <span class="timeline-year">2025</span>
-
-                    <div>
-                        <h3>X Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição online realizada entre 25 e 28 de novembro de 2025,
-                            promovida pelo Grupo de Pesquisa História, Filosofia e
-                            Educação Matemática.
-                        </p>
-
-                        <a
-                            class="text-link"
-                            href="https://www.even3.com.br/e/encontro-do-hifem-2025-616116"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Acessar página do evento
-                        </a>
-                    </div>
-                </article>
-
-
-                <!-- XI ENCONTRO -->
-                <article class="timeline-item destaque">
-                    <span class="timeline-year">2026</span>
-
-                    <div>
-                        <h3>XI Encontro Nacional do HIFEM</h3>
-
-                        <p>
-                            Edição comemorativa vinculada aos 30 anos de trajetória do
-                            grupo de pesquisa, prevista para 09 e 10 de novembro de 2026,
-                            no Instituto Federal de São Paulo.
-                        </p>
-
-                        <a class="text-link" href="./noticias/xi-encontro-2026.html">
-                            Acessar notícia completa
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-
-        <div class="sep"></div>
-
-
-        <!-- OUTRAS ATIVIDADES -->
-        <section class="eventos-section">
-
-            <header class="section-heading">
-                <span>Atividades do grupo</span>
-
-                <h1>
-                    Seminários, rodas de conversa e ações formativas
-                </h1>
-
-                <p class="page-lead">
-                    Além dos encontros nacionais, o HIFEM realiza e participa de atividades
-                    acadêmicas voltadas à formação, à pesquisa, à divulgação científica e
-                    à socialização de estudos em História, Filosofia e Educação Matemática.
-                </p>
-            </header>
-
-
-            <div class="page-grid">
-
-                <article class="content-card">
-                    <span class="info">Estudos coletivos</span>
-
-                    <h2 class="section-header">
-                        Textos e Conversas
-                    </h2>
-
-                    <p>
-                        Espaço de leitura, estudo e discussão coletiva de textos, livros
-                        e referências teóricas relacionadas aos interesses de pesquisa do
-                        grupo.
-                    </p>
-
-                    <p>
-                        <a class="text-link" href="./noticias/textos-e-conversas-chartier-inscrever-e-apagar.html">
-                            Ver leitura atual
-                        </a>
-                    </p>
-                </article>
-
-
-                <article class="content-card">
-                    <span class="info">Divulgação científica</span>
-
-                    <h2 class="section-header">
-                        Rodas de conversa e seminários
-                    </h2>
-
-                    <p>
-                        Atividades de diálogo acadêmico, apresentação de pesquisas em
-                        andamento e circulação de debates relacionados à Educação Matemática.
-                    </p>
-                </article>
-
-
-                <article class="content-card">
-                    <span class="info">Formação</span>
-
-                    <h2 class="section-header">
-                        Oficinas, minicursos e ações de ensino
-                    </h2>
-
-                    <p>
-                        Ações voltadas à formação inicial e continuada de professores,
-                        articulando História da Matemática, Educação Matemática e práticas
-                        de ensino.
-                    </p>
-                </article>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- RODAPÉ -->
-    <footer>
-        <div class="footer-inner">
-
-            <div>
-                <div class="footer-brand">HIFEM</div>
-                <p>
-                    Grupo de Pesquisa em História, Filosofia e Educação Matemática.
-                </p>
-                <p>
-                    © 2026 HIFEM.
-                </p>
-            </div>
-
-            <div>
-                <div class="footer-title">Navegação</div>
-
-                <div class="footer-links">
-                    <a href="./sobre.html">Sobre</a>
-                    <a href="./docentes.html">Integrantes</a>
-                    <a href="./publicacoes.html">Publicações</a>
-                    <a href="./eventos.html">Eventos</a>
-                </div>
-            </div>
-
-            <div>
-                <div class="footer-title">Contato</div>
+                <h2 class="section-header">
+                    Rodas de conversa e seminários
+                </h2>
 
                 <p>
-                    E-mail:<br />
-                    grupohifem@gmail.com
+                    Atividades de diálogo acadêmico, apresentação de pesquisas em
+                    andamento e circulação de debates relacionados à Educação Matemática.
                 </p>
-            </div>
+            </article>
+
+
+            <article class="content-card">
+                <span class="info">Formação</span>
+
+                <h2 class="section-header">
+                    Oficinas, minicursos e ações de ensino
+                </h2>
+
+                <p>
+                    Ações voltadas à formação inicial e continuada de professores,
+                    articulando História da Matemática, Educação Matemática e práticas
+                    de ensino.
+                </p>
+            </article>
 
         </div>
-    </footer>
+
+    </section>
+
+</main>
 
 
-    <!-- JS -->
-    <script src="../js/nav.js" defer></script>
+<!-- RODAPÉ -->
+<footer>
+    <div class="footer-inner">
+
+        <div>
+            <div class="footer-brand">HIFEM</div>
+            <p>
+                Grupo de Pesquisa em História, Filosofia e Educação Matemática.
+            </p>
+            <p>
+                © 2026 HIFEM.
+            </p>
+        </div>
+
+        <div>
+            <div class="footer-title">Navegação</div>
+
+            <div class="footer-links">
+                <a href="./sobre.html">Sobre</a>
+                <a href="./docentes.html">Integrantes</a>
+                <a href="./publicacoes.html">Publicações</a>
+                <a href="./eventos.html">Eventos</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="footer-title">Contato</div>
+
+            <p>
+                E-mail:<br />
+                grupohifem@gmail.com
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- JS -->
+<script src="../js/nav.js" defer></script>
+```
 
 </body>
 </html>
