@@ -560,9 +560,9 @@
 /* Imagem principal dentro da notícia */
 .noticia-cover,
 .noticia-article .noticia-cover {
-    width: min(100%, 860px);
+    width: min(100%, 520px);
     height: auto !important;
-    max-height: none !important;
+    max-height: 560px !important;
 
     display: block;
 
